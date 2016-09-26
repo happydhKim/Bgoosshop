@@ -1,0 +1,18 @@
+<ion-view title="카테고리" id="page2">
+
+<div class="bar bar-header bar-stable" style="background-color:#edce1f">
+      
+       	       <h5 class="title"><font color=#ffffff>카테고리</font></h5>
+      
+<a class="button icon-right button-clear" >
+        <img src="img/icon/main-cart.png" style="width:30px; height:auto;">
+</a>
+</div>
+
+
+    <ion-content  scroll="false"> 
+         <ion-content overflow-scroll="true" style="position:fixed;" on-scroll="getScrollPosition()">
+              <iframe data-tap-disabled="true" header-shrink id="mobile_web" src="http://52.78.130.219/dhionic/goods/category.php" style="left:0;top:0;height:100%;margin:45px 0px;width:100%;background-color:#fff;" onLoad="uploadDone()" ></iframe>
+          </ion-content>
+     
+</ion-view>

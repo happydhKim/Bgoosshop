@@ -1,0 +1,121 @@
+/* Empty. Add your own CSS if you like */
+
+#mainimage-low {
+
+ padding :30px;
+  height: 100%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
+
+
+
+/* swiper 컨테이너 */
+#swiper-main {
+    width: 600px;
+    height: 300px;
+
+}
+/* swiper 컨테이너 */
+#swiper-slide {
+    text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+
+}
+
+
+/* sHOP 화면 텍스트 바디 역영  */
+#main-item-body-part {
+  height:170px;
+  position:relative; 
+  z-index:1;
+}
+
+/* sHOP 화면 리스트 그림 영역  */
+#main-shop-image {
+  height:170px;
+  position:relative; 
+  z-index:1;
+}
+
+
+/* sHOP 화면 슬라이드 영역  */
+#sHOP-slide-div{
+  height:300px;
+}
+
+/* sHOP 화면 이미지  */
+#sHOP-main-image {
+  width:320px;
+  height:200px;  
+  
+  
+}
+/* sHOP 화면 이미지 영역 */
+#sHOP-main-image-div {
+  position:relative; 
+  z-index:1;
+}
+
+/* sHOP 화면 캐릭터 이미지 영역*/
+#sHOP-main-character-div {
+  border-radius: 50%;
+  border: 3px solid white;
+  position:relative;
+  width:70px;
+  height:70px;
+  left:10px;
+  top:-40px;
+  z-index:2;
+  background-size: 70px 70px;
+}
+
+/* sHOP 화면 텍스트 영역  */
+#sHOP-main-text-div {
+  position:relative; 
+  top:-75px;
+}
+
+/* sHOP 화면 유저아이디 영역 */
+#sHOP-main-userID-div {
+  position:relative; 
+  left:90px;
+}
+
+.p_align_center{
+  text-align: center;
+}
+.p_align_left_margin{
+  margin-left: 20px;
+}
+
+
+/* 누리박스 받아보기 버튼 스타일 */
+#button-getNuribox {
+  margin: 8px;
+  width: 50%;
+  height: 40px;
+  font-size: 14spx;
+  background-color: #f47100;
+}

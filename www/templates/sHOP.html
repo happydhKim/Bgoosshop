@@ -1,0 +1,78 @@
+<ion-view title="SHOP" id="page3">
+    
+        <div class="bar bar-header bar-stable" style="background-color:#edce1f">
+        <a class="button icon-left button-clear" ng-controller='sHOPCtrl' ng-click="openModal(1)">
+       	<img src="img/icon/qrcode.png"  style="width:30px; height:auto;">       	
+        </a>
+
+
+       	       <h5 class="title"><font color=#ffffff>쇼핑몰로고</font></h5>
+
+
+        <a class="button icon-right button-clear" ng-controller='sHOPCtrl' ng-click="openModal(2)">
+        <img src="img/icon/main-cart.png" style="width:30px; height:auto;">
+      	</a>
+
+       
+       </div>
+
+
+
+
+
+<ion-content padding="true" class="has-header">
+       
+
+<ion-slide-box does-continue="true" show-pager="false">
+<ion-slide ng-repeat="item in data.slides" style="background-color: {{item.color}}">
+    <div class="card" id="sHOP-slide-div">
+
+        <!-- 물건 이미지 영역 -->
+        <div id="sHOP-main-image-div">
+           <p class="p_align_center">
+            <img ng-src="{{ item.imageURL }}" id="sHOP-main-image" >
+            <img ng-src="{{ avatar.avatar }}" >   
+          </p>
+        </div>
+
+
+
+
+        <!-- 소비자 캐릭터 이미지 영역 -->
+         <div id="sHOP-main-character-div" style="background-image:url({{ item.imageURL }}) ;">
+         </div>
+
+        <!-- 소비자 상품평 영역 -->
+          <div id="sHOP-main-text-div">
+          <h3 id="sHOP-main-userID-div">{{item.title}}</h3>
+          <p class="p_align_left_margin">{{item.data}}</br>
+          Index {{ $index }}</p>
+        </div>
+
+    </div>
+</ion-slide>
+
+
+</ion-slide-box>
+
+
+
+        <!-- Refresh to get the new posts -->
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="getNewData()">
+    </ion-refresher>
+
+    <div ng-repeat="post in posts">
+      <section ng-include="'templates/cards/post-card.html'" class="post-card-outer"></section>
+    </div>
+
+    <!-- 무한 -->
+    <ion-infinite-scroll ng-if="moreDataCanBeLoaded()" on-infinite="loadMoreData()" distance="2%">
+    </ion-infinite-scroll>
+
+
+
+       
+
+     
+    </ion-content>
+</ion-view>

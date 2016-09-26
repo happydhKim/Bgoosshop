@@ -1,0 +1,37 @@
+
+<ion-modal-view>
+
+    <div class="bar bar-header bar-stable" style="background-color:#edce1f">
+      
+        <a class="button icon-left button-clear" ng-click="closeModal(1)">
+               <img src="img/icon/back-btn.png" style="width:30px; height:auto;">
+
+                </a>
+
+               <h5 class="title"><font color=#ffffff>QR code</font></h5>
+       <a class="button icon-right button-clear" >
+        <img src="img/icon/main-cart.png" style="width:30px; height:auto;">
+                </a>
+
+       
+       </div>
+
+    <ion-content>
+    <div class="card">
+    <div class="item">
+        <button class="button button-block button-positive">
+            <i class="icon ion-qr-scanner"></i>
+            Scan Now
+            </button>
+    </div>
+    </div>
+    <div class="card">
+        <div class="item item-divider">Scan Results</div>
+        <div class="item item-text-wrap">{{vm.scanResults}}
+    </div>
+    </div>
+       
+    </ion-content>
+</ion-modal-view>
+
+
