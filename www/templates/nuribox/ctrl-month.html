@@ -1,0 +1,48 @@
+<!-- 누리박스 월별 버튼 리스트  currentMonth currentYear 현재 월, 년도 초기화 -->
+<div ng-controller="timeCtrl" ng-init="currentMonth=date_format_month;currentYear=date_format_year" id="nuri-month-div">
+    <div ng-if="currentMonth>=5">
+        <div id="nuri-button-monthctrl" class="button-bar">
+            <button id="nuri-button-m1" class="button button-outline button-block">{{currentMonth+"월"}}</button>
+            <button id="nuri-button-m2" class="button button-outline button-block">{{currentMonth-1+"월"}}</button>
+            <button id="nuri-button-m3" class="button button-outline button-block">{{currentMonth-2+"월"}}</button>
+            <button id="nuri-button-m4" class="button button-outline button-block">{{currentMonth-3+"월"}}</button>
+            <button id="nuri-button-m5" class="button button-outline button-block">{{currentMonth-4+"월"}}</button>
+        </div>
+    </div>
+    <div ng-if="currentMonth==4">
+        <div id="nuri-button-monthctrl" class="button-bar">
+            <button id="nuri-button-m1" class="button button-stable button-outline button-block">{{currentMonth+"월"}}</button>
+            <button id="nuri-button-m2" class="button button-light button-outline button-block">{{currentMonth-1+"월"}}</button>
+            <button id="nuri-button-m3" class="button button-light button-outline button-block">{{currentMonth-2+"월"}}</button>
+            <button id="nuri-button-m4" class="button button-light button-outline button-block">{{currentMonth-3+"월"}}</button>
+            <button id="nuri-button-m5" class="button button-light button-outline button-block"">{{currentMonth+8+"월"}}</button>
+        </div>
+    </div>
+    <div ng-if="currentMonth==3">
+        <div id="nuri-button-monthctrl" class="button-bar">
+            <button id="nuri-button-m1" class="button button-stable button-outline button-block">{{currentMonth+"월"}}</button>
+            <button id="nuri-button-m2" class="button button-light button-outline button-block">{{currentMonth-1+"월"}}</button>
+            <button id="nuri-button-m3" class="button button-light button-outline button-block">{{currentMonth-2+"월"}}</button>
+            <button id="nuri-button-m4" class="button button-light button-outline button-block">{{currentMonth+9+"월"}}</button>
+            <button id="nuri-button-m5" class="button button-light button-outline button-block"">{{currentMonth+8+"월"}}</button>
+        </div>
+    </div>
+    <div ng-if="currentMonth==2">
+        <div id="nuri-button-monthctrl" class="button-bar">
+            <button id="nuri-button-m1" class="button button-stable button-outline button-block">{{currentMonth+"월"}}</button>
+            <button id="nuri-button-m2" class="button button-light button-outline button-block">{{currentMonth-1+"월"}}</button>
+            <button id="nuri-button-m3" class="button button-light button-outline button-block">{{currentMonth+10+"월"}}</button>
+            <button id="nuri-button-m4" class="button button-light button-outline button-block">{{currentMonth+9+"월"}}</button>
+            <button id="nuri-button-m5" class="button button-light button-outline button-block"">{{currentMonth+8+"월"}}</button>
+        </div>
+    </div>
+    <div ng-if="currentMonth==1">
+        <div id="nuri-button-monthctrl" class="button-bar">
+            <button id="nuri-button-m1" class="button button-stable button-outline button-block">{{currentMonth+"월"}}</button>
+            <button id="nuri-button-m2" class="button button-light button-outline button-block">{{currentMonth+11+"월"}}</button>
+            <button id="nuri-button-m3" class="button button-light button-outline button-block">{{currentMonth+10+"월"}}</button>
+            <button id="nuri-button-m4" class="button button-light button-outline button-block">{{currentMonth+9+"월"}}</button>
+            <button id="nuri-button-m5" class="button button-light button-outline button-block"">{{currentMonth+8+"월"}}</button>
+        </div>
+    </div>
+</div>

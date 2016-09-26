@@ -1,0 +1,37 @@
+
+<!-- 체크박스를 위한 form-->
+<div ng-controller="getInfoFromDB" id="nuri-list">
+    <ion-list>
+        <!-- 체크박스를 위한 form-->
+        <form>
+            <ion-item>
+                <div id="nuri-check">
+                    <input type="checkbox">전체 선택
+                </div>
+            </ion-item>
+            <ion-item ng-repeat="good in goods" type="item-text-wrap" >
+                    <div id="nuri-image-div">
+                        <input type="checkbox">
+                        <img src="http://52.78.130.219/shop/data/goods/{{good.img_m}}" id="nuri-image">
+                    </div>
+                    <div id="nuri-text-div">
+                        ㅁㄴㅇㅁㄴsa
+                        
+                        </br>
+                        asdfgweg
+                        </br>
+                        nfdgnn
+                        </br>
+                        <div id="nuri-addOrSub" class="button-bar">
+                            <button id="nuri-sub" class="button button-outline">-</button>
+                            <button id="nuri-add" class="button button-outline">+</button>
+                        </div>
+
+                    </div>
+
+
+            </ion-item>
+        </form>
+
+    </ion-list>
+</div>

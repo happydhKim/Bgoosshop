@@ -279,64 +279,6 @@ function ($scope, $stateParams) {
 })
 
 
- .controller('nuriCtrl', function ($scope, $window) {
-    $scope.demo = 'nuri'
-
-
-    // 기존에 있는 리스트를 모두 제거해서 다시 보여주는 방법으로 가야함
-    $scope.setPlatform = function (p) {
-      // document.body.classList.remove('platform-nuri')
-      // document.body.classList.remove('platform-tool')
-      // document.body.classList.remove('platform-mybox')
-      // document.body.classList.add('platform-' + p)
-      $scope.demo = p;
-      if($scope.demo == "nuri"){
-          $window.alert("누리박스");
-      }
-      else if($scope.demo == "tool"){
-          $window.alert("보유교구");
-      }
-      else{
-          $window.alert("마이상자");
-      }
-    }
-    // $scope.$on('$ionicView.loaded', function () {
-    //   Users.retrieveAllUserList(function () {
-    //     $scope.users = Users.all();
-    //     $scope.$apply();
-    //   });
-    // });
-
-
-
-
-    // 이 내용을 DB Hadler에서 추가해야함  리스트 먼저 만들고 사전 만들어서 사전을 초기화하면서 리스트에 푸쉬하는 방식
-
-    $scope.data = {};
-    $scope.data.slides = [{
-      imageURL: "img/example/exam1.jpg",
-      avatar: "img/example/exam1.jpg",
-      title: "Slide 1",
-      data: "Slide 1 Content",
-      color: "lightyellow"
-    }, {
-      imageURL: "img/example/exam1.jpg",
-      title: "Slide 2",
-      data: "Slide 2 Content",
-      color: "lightpink"
-    }, {
-      imageURL: "img/example/exam1.jpg",
-      title: "Slide 3",
-      data: "Slide 3 Content",
-      color: "grey"
-    },];
-
-
-
-
-
-  })
-
 
 
    //누리박스 부분
@@ -363,6 +305,144 @@ function ($scope, $ionicModal) {
 
 
 }])
+
+
+
+ .controller('nuriCtrl', function ($scope, $window) {
+    $scope.demo = 'nuri'
+
+
+    // 기존에 있는 리스트를 모두 제거해서 다시 보여주는 방법으로 가야함
+    $scope.setPlatform = function (p) {
+      document.getElementById("nuri-tool-div").style.display='none';
+      document.getElementById("nuri-tool-order").style.display='none';
+      // document.body.classList.remove('platform-nuri')
+      // document.body.classList.remove('platform-tool')
+      // document.body.classList.remove('platform-mybox')
+      // document.body.classList.add('platform-' + p)
+      $scope.demo = p;
+      if($scope.demo == "nuri"){
+          document.getElementById("nuri-tool-div").style.display='none';
+          document.getElementById("nuri-month-div").style.display='';
+          document.getElementById("nuri-button-order").style.display='';
+          document.getElementById("nuri-tool-order").style.display='none';
+      }
+      else if($scope.demo == "tool"){
+          document.getElementById("nuri-month-div").style.display='none';
+          document.getElementById("nuri-tool-div").style.display='';
+          document.getElementById("nuri-button-order").style.display='none';
+          document.getElementById("nuri-tool-order").style.display='';
+      }
+      else{
+          document.getElementById("nuri-month-div").style.display='none';
+          document.getElementById("nuri-tool-div").style.display='none';
+          document.getElementById("nuri-button-order").style.display='none';
+          document.getElementById("nuri-tool-order").style.display='none';
+      }
+    }
+
+
+
+    // 이 내용을 DB Hadler에서 추가해야함  리스트 먼저 만들고 사전 만들어서 사전을 초기화하면서 리스트에 푸쉬하는 방식
+
+   	$scope.data = {};
+   	$scope.data.slides = [{
+   		imageURL: "img/example/exam1.jpg",
+   		avatar: "img/example/exam1.jpg",
+   		title: "Slide 1",
+   		data: "Slide 1 Content",
+   		color: "lightyellow"
+   	}, {
+   		imageURL: "img/example/exam1.jpg",
+   		title: "Slide 2",
+   		data: "Slide 2 Content",
+   		color: "lightpink"
+   	}, {
+   		imageURL: "img/example/exam1.jpg",
+   		title: "Slide 3",
+   		data: "Slide 3 Content",
+   		color: "grey"
+   	},];
+
+
+
+    
+
+
+
+  })
+
+
+
+
+  .controller('timeCtrl', function($scope, $filter) {
+    var date = new Date();
+    $scope.date_format_month = $filter('date')(new Date(), 'M');
+    $scope.date_format_year = $filter('date')(new Date(), 'yy');
+
+
+
+    $scope.setPlatform = function (m) {
+        $window.alert(m);
+    }
+  })
+
+
+
+.controller('getInfoFromDB', function($scope, $http, $window, $log) {
+
+  var link = "http://52.78.130.219/mobile_sHOP.php";
+  $http.get(link).success(function(response){
+    $scope.goods = response;
+  })
+  // .error(function(response){
+  //     $log.error(response);
+  // }))
+
+  
+  // $scope.getDB = function(){
+  //   $http.get(link).then(function(response){
+  //     $scope.goods = response.data;
+  //     //$window.alert(JSON.stringify(response.data));
+  //   })
+  // }
+
+  })
+
+
+
+.controller('nuriReturnCtrl', function($scope, $http, $ionicPopup, $window) {
+
+
+  var link = "http://52.78.130.219/mobile_sHOP.php";
+  $http.get(link).success(function(response){
+    $scope.goods = response;
+  })
+
+ $scope.returnReasons = { q1 : '해당 교구를 이미 보유', q2 : '해당영역에 다른 교구 보유', q3 : '가격이 비쌈', q4 : '디자인, 질감이 안 좋음', q5 : '선생님들 평이 안 좋음', q6 : '안전해 보이지 않음'}
+
+
+ 
+  $scope.showAlert = function() {
+  
+   var alertPopup = $ionicPopup.show({
+     title: "<p>해당 교구를 반송하시겠습니까?</p> <p><b>반송 사유</b>를 선택해 주세요.</p>",
+     templateUrl: 'templates/nuribox/returnReasonBox.html',
+     scope: $scope,
+     
+     buttons :   [{
+        text: '<b>반송하기</b>',
+        type: 'button-positive',
+        scope: $scope,
+        onTap: function(e) {
+          // add your action
+          $window.alert($scope.returnReasons.q1)
+        }
+      }]  
+   });
+ 
+ };
+})
 
 
 

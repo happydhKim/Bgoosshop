@@ -61,10 +61,12 @@
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="getNewData()">
     </ion-refresher>
 
-    <div ng-repeat="post in posts">
-      <section ng-include="'templates/cards/post-card.html'" class="post-card-outer"></section>
+    <!-- DB에서 상품 갖고와서 출력하기 -->
+    <div ng-controller="getInfoFromDB" >
+        <div ng-repeat="good in goods">
+            <section ng-include="'templates/cards/post-card.html'" class="post-card-outer"></section>
+        </div>
     </div>
-
     <!-- 무한 -->
     <ion-infinite-scroll ng-if="moreDataCanBeLoaded()" on-infinite="loadMoreData()" distance="2%">
     </ion-infinite-scroll>

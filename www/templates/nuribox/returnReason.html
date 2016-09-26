@@ -1,0 +1,43 @@
+<ion-nav-view title="반송사유">
+
+    <div class="bar bar-header bar-stable" style="background-color:#edce1f">
+
+        <a class="button icon-left button-clear" href="#nuri">
+            <img src="img/icon/back-btn.png" style="width:30px; height:auto;">
+        </a>
+
+        <h5 class="title"><font color=#ffffff>반송사유 미입력</font></h5>
+
+        <a class="button icon-right button-clear" ng-controller='sHOPCtrl' ng-click="openModal(2)">
+            <img src="img/icon/main-cart.png" style="width:30px; height:auto;">
+        </a>
+
+    </div>
+
+
+    <ion-content padding="true" class="has-header" has-header="true">
+
+    <div ng-controller="nuriReturnCtrl">
+        <ion-list>
+            <ion-item >
+                전체(db의 반송 미사유 개수)
+            </ion-item>
+            <ion-item ng-repeat="good in goods" type="item-text-wrap" >
+                <div id="nuri-return-input-image-div">
+                    <img ng-src="http://52.78.130.219/shop/data/goods/{{good.img_m}}" id="nuri-return-input-image">
+                </div>
+                <div id="nuri-return-input-text-div">
+                    ㅁㄴㅇㅁㄴㅇㅎㅁㄴㅇㅎ
+                    
+                    </br>
+                    asdfgweg
+                    </br>
+                    nfdgnn
+                    </br>
+                    <button id="input-nuri-return-reason" ng-click="showAlert()" class="button button-light button-outline button-block">반송 미입력 </button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div>
+    </ion-content>
+</ion-nav-view>

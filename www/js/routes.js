@@ -56,6 +56,15 @@ angular.module('app.routes', ['ionic','ngCordova'])
       }
   }
 })
+ .state('tabsController.nurireturn',{
+  url:'/nurireturn',
+  views: {
+    'tab3':{
+    templateUrl:'templates/nuribox/returnReason.html',
+    controller: 'nuriCtrl'
+      }
+  }
+})
  
 
  .state('tabsController.page5', {

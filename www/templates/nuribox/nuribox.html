@@ -1,47 +1,101 @@
+<ion-nav-view>
 
-<ion-nav-view title="nuribox" id="nuribox">
+<div class="bar bar-header bar-stable" style="background-color:#edce1f">
+
+    <a class="button icon-left button-clear" href="#page1/page4">
+        <img src="img/icon/back-btn.png" style="width:30px; height:auto;">
+    </a>
+    <h5 class="title"><font color=#ffffff>누리누리</font></h5>
+
+
+    <a class="button icon-right button-clear" ng-controller='sHOPCtrl' ng-click="openModal(2)">
+        <img src="img/icon/main-cart.png" style="width:30px; height:auto;">
+    </a>
+</div>
 
 
 
+<ion-content padding="true" class="has-header" has-header="true">
 
-    <ion-content padding="true" class="has-header">
-
-        <div class="list card" id="sHOP-card21">
-        <button class="button button-clear button-primary" ng-click="closeModal()">취소</button>
-            <div class=" item item-image">
-                <img src="img/t4tWOWckRsfDwTjgmurU_exam1.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
-            </div>
-            <div id="sHOP-button-bar1" class="button-bar">
-                <button id="sHOP-button4" class="button button-light  button-block">1</button>
-                <button id="sHOP-button6" class="button button-light  button-block">3</button>
-            </div>
-            <form id="sHOP-form1" class="list">
-                <div id="sHOP-button-bar2" class="button-bar">
-                    <button id="sHOP-button7" class="button button-stable  button-block">1</button>
-                    <button id="sHOP-button8" class="button button-light  button-block">2</button>
-                    <button id="sHOP-button9" class="button button-light  button-block">3</button>
-                    <button id="sHOP-button10" class="button button-light  button-block">3</button>
-                    <button id="sHOP-button11" class="button button-light  button-block">3</button>
+    <div class="div_align_center">
+        <h4>
+            <div id="return-text-div">
+                <div id="return-text">
+                    반송사유 미입력 (2)
                 </div>
-                <ion-checkbox>Checkbox</ion-checkbox>
-            </form>
-            <ion-item class="item-thumbnail-left item-icon-right" id="sHOP-list-item8">
-                <h2>Item</h2>
-                <i class="icon ion-android-add-circle"></i>
-            </ion-item>
-            <ion-item class="item-thumbnail-left" id="sHOP-list-item10">
-                <h2>Item</h2>
-            </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right" id="sHOP-list-item9">
-                <h2>Item</h2>
-                <i class="icon ion-android-add-circle"></i>
-            </ion-item>
-            <div id="sHOP-button-bar3" class="button-bar">
-                <button id="sHOP-button12" class="button button-light  button-block">1</button>
-                <button id="sHOP-button13" class="button button-light  button-block">2</button>
+                <a class="button icon-right ion-chevron-right button-clear" href="#/page1/nurireturn">
+                </a>
+            </div>
+        </h4>
+
+    </div>
+
+
+    <div id="nuri-button-mainctrl" class="button-bar" ng-controller="nuriCtrl">
+        <button id="nuri-button-nuri" class="button button-light button-block" ng-click="setPlatform('nuri')">누리 박스</button>
+        <button id="nuri-button-tool" class="button button-light button-block" ng-click="setPlatform('tool')" >보유 교구</button>
+        <button id="nuri-button-mybox" class="button button-light button-block" ng-click="setPlatform('mybox')">나의 박스</button>
+    </div>
+
+
+
+    <div>
+        <section ng-include="'templates/nuribox/ctrl-month.html'"></section>
+        <!-- 보유 교구 버튼 리스트 -->
+        <div id="nuri-tool-div">
+            <div id="nuri-button-toolCtrl" class="button-bar">
+                <button id="nuri-button-tool-list" class="button button-stable button-outline button-block">필요 교구 목록</button>
+                <button id="nuri-button-my-tool" class="button button-light button-outline button-block">내 교구 이미지</button>
             </div>
         </div>
-    </ion-content>
+    </div>
+
+
+
+    <div>
+        <section ng-include="'templates/nuribox/show-list.html'"></section>
+    </div>
+
+    <!-- 체크박스를 위한 form-->
+    <!--<div ng-controller="getInfoFromDB" id="nuri-list">
+        <ion-list>
+            <form>
+                <ion-item>
+                    <div id="nuri-check">
+                        <input type="checkbox">전체 선택
+                    </div>
+                </ion-item>
+                <ion-item ng-repeat="good in goods" type="item-text-wrap" >
+                        <div id="nuri-image-div">
+                            <input type="checkbox">
+                            <img src="http://52.78.130.219/shop/data/goods/{{good.img_m}}" id="nuri-image">
+                        </div>
+                        <div id="nuri-text-div">
+                            ㅁㄴㅇㅁㄴsa
+                            
+                            </br>
+                            asdfgweg
+                            </br>
+                            nfdgnn
+                            </br>
+                            <div id="nuri-addOrSub" class="button-bar">
+                                <button id="nuri-sub" class="button button-outline">-</button>
+                                <button id="nuri-add" class="button button-outline">+</button>
+                            </div>
+
+                        </div>
+                </ion-item>
+            </form>
+        </ion-list>
+    </div>-->
+
+    <div id="nuri-button-order" class="button-bar">
+        <button id="nuri-button-doOrder" class="button button-light button-outline button-blocks">주문하기</button>
+        <button id="nuri-button-doNotOrder" class="button button-light button-outline button-blocks">전체미주문</button>
+    </div>
+    <div id="nuri-tool-order" class="button-bar">
+        <button id="nuri-tool-register-img" class="button button-light button-outline button-blocks">이미지 등록</button>
+        <button id="nuri-tool-register-tool" class="button button-light button-outline button-blocks">필요교구 등록</button>
+    </div>
+  </ion-content>
 </ion-nav-view>
-
-

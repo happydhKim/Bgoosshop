@@ -16,47 +16,41 @@
 
 
 
-/* swiper 컨테이너 */
-#swiper-main {
-    width: 600px;
-    height: 300px;
 
+
+.list-card {
+  height: 100%;
+  padding: 20px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* swiper 컨테이너 */
-#swiper-slide {
-    text-align: center;
-        font-size: 18px;
-        background: #fff;
-        
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
 
+.custom-card.card {
+  height: 100%;
+  margin: 0;
+}
+
+.scroll-view {
+  height: 100%;
 }
 
 
-/* sHOP 화면 텍스트 바디 역영  */
-#main-item-body-part {
-  height:170px;
-  position:relative; 
-  z-index:1;
-}
 
-/* sHOP 화면 리스트 그림 영역  */
-#main-shop-image {
-  height:170px;
-  position:relative; 
-  z-index:1;
+
+
+.list-card .item-body .item-avatar {
+  background-position: center center;
+  background-size: cover;
+  border: 5px #efefef solid;
+  border-radius: 50%;
+  bottom: -50px;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 1px 1px 4px rgba(0,0,0,0.3);
+  height: 148px;
+  left: 150px;
+  position: absolute;
+  width: 148px;
+  z-index: 3;
 }
 
 
@@ -69,8 +63,6 @@
 #sHOP-main-image {
   width:320px;
   height:200px;  
-  
-  
 }
 /* sHOP 화면 이미지 영역 */
 #sHOP-main-image-div {
@@ -118,4 +110,142 @@
   height: 40px;
   font-size: 14spx;
   background-color: #f47100;
+}
+
+.div_align_center{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* 누리박스 반송미입력 리스트 이미지 */
+#nuri-return-input-image-div {
+  position: relative;
+  float: left;
+  left: 20px;
+}
+
+/* 누리박스 반송미입력 리스트 이미지 */
+#nuri-return-input-image {
+  width:100px;
+  height:100px;
+}
+
+/* 누리박스 반송미입력 리스트 이미지 */
+#nuri-return-input-text-div {
+  position: relative;
+  float: left;
+  left: 50px;
+}
+
+#input-nuri-return-reason {
+  width: 150px;
+  background-color: #f47100;
+}
+
+
+
+
+
+
+
+
+
+#nuri-checkbox{
+  left: 5px;
+}
+
+/* 누리박스 이미지 영역 */
+#nuri-image-div {
+  position: relative;
+  float: left;
+  
+}
+
+
+/* 누리박스 리스트 이미지 */
+#nuri-image {
+  width:100px;
+  height:100px;
+}
+
+/* 누리박스 리스트 텍스트 영역 */
+#nuri-text-div {
+  position: relative;
+  
+  float: left;
+  left: 10px;
+  width: 50%;
+}
+
+
+#nuri-check{
+  position: relative;
+  left: -10px;
+}
+
+
+
+
+
+#sHOP-button-m1{
+  width:20px;
+}
+
+#sHOP-button-m2{
+  width:20px;
+}
+
+#sHOP-button-m3{
+  width:20px;
+}
+
+#sHOP-button-m4{
+  width:20px;
+}
+
+#sHOP-button-m5{
+  width:20px;
+}
+
+
+#nuri-add{
+  line-height:29px !important;
+}
+
+
+#nuri-sub{
+  width:20px;
+}
+
+
+
+
+#return-text{
+  float:left;
+  text-align: center;
+  margin-top:10px;
+  margin-left:100px;
+}
+
+#return-text-div{
+  margin-top:30px;
+}
+
+#sHOP-main-img{
+  height:400px;
+}
+
+
+#return-reason-box{
+  width:340px;
+}
+
+.popup{
+  width:300px !important;
 }
